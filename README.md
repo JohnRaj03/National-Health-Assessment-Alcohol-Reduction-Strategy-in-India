@@ -58,3 +58,22 @@ Modeling the redirection of a monthly alcohol spend (approx. **₹4,000**) into 
 UPDATE National_Health_Data 
 SET Consumption_Value = 0 
 WHERE Consumption_Value < 0;
+
+---
+
+## 💻 Technical Implementation
+
+### Wealth Projection (SQL)
+```sql
+-- Calculating cumulative savings for the Family Wealth Plan
+SELECT User_ID, 
+       SUM(Daily_Savings) AS Total_Principal, 
+       (SUM(Daily_Savings) * 1.12) AS Projected_Yearly_Growth 
+FROM User_Savings_Log 
+WHERE Transaction_Date >= '2025-01-01' 
+GROUP BY User_ID;
+sql
+
+
+
+
