@@ -1,76 +1,69 @@
-# National-Health-Assessment-Alcohol-Reduction-Strategy-in-India
-Project Overview
-This project presents a data-driven analysis of alcohol consumption patterns across Indian States and Union Territories. It moves beyond surface-level statistics to identify deep-rooted socio-economic challenges, categorizing regions into risk profiles to understand where economic drain is most severe.
-+2
+National Health Assessment & Alcohol Reduction Strategy in India
+📌 Project Overview
+Objective: A data-driven analysis of alcohol consumption patterns across Indian States and Union Territories.
 
-The ultimate goal is to establish a roadmap for change through a dual strategy:
+Scope: Identifies deep-rooted socio-economic challenges and categorizes regions into risk profiles to pinpoint economic drain.
 
+Goal: Establish a roadmap for change via a dual-pillar strategy:
 
 Technological Safeguards: Protecting the younger generation from early exposure.
 
+Family Wealth Plan: Transitioning alcohol expenditure into long-term financial assets (The "Sobriety Dividend").
 
-Family Wealth Plan: Redirecting alcohol expenditure into long-term financial assets, termed the "Sobriety Dividend".
-
-Methodology: Exploratory Data Strategy (EDS)
-The project utilizes an Exploratory Data Strategy (EDS) to analyze the 2021 Alcohol Consumption dataset.
-+1
+🧪 Methodology: Exploratory Data Strategy (EDS)
+The project utilizes EDS to analyze the 2021 Alcohol Consumption dataset through a structured pipeline:
 
 Data Processing Pipeline
+Cleaning & Normalization: * Addressed data irregularities and negative percentage values.
 
-Cleaning & Normalization: Handled data irregularities, such as negative percentage values, using clipping algorithms to ensure analytical consistency.
+Utilized clipping algorithms to ensure analytical consistency.
 
+Pattern Recognition: * Identified "Rural-Urban Disparity."
 
-Pattern Recognition: Identified a "Rural-Urban Disparity," finding that male consumption in rural areas (19.92%) is significantly higher than in urban centers (16.53%).
+Found rural male consumption (19.92%) significantly higher than urban centers (16.53%).
 
+Unsupervised Machine Learning: * Implemented K-Means Clustering to group states into three distinct risk zones.
 
-Unsupervised Machine Learning: Implemented K-Means Clustering to group states into three distinct risk zones.
-
-Machine Learning & Analytics
+🤖 Machine Learning & Analytics
 Clustering Risk Zones
-Using Scikit-learn, states were categorized based on male and female consumption percentages:
+Using Scikit-learn, states were categorized based on gendered consumption percentages:
 
+🔴 High Risk (Cluster 2): States like Arunachal Pradesh and Sikkim (Male consumption >45%).
 
-High Risk (Cluster 2): States like Arunachal Pradesh and Sikkim (Male consumption >45%).
+🟡 Moderate Risk (Cluster 0): States like Telangana and Goa (~34% consumption) — identified as a "wealth trap."
 
-
-Moderate Risk (Cluster 0): States like Telangana and Goa (~34% consumption), identifying a "wealth trap" for middle-income families.
-
-
-Low Risk (Cluster 1): Majority of states with consumption around 18%.
+🟢 Low Risk (Cluster 1): Majority of states with consumption levels around 18%.
 
 Correlation Analysis
-A heatmap analysis revealed a strong positive correlation between male and female consumption within households, suggesting that alcohol use is an environmental habit affecting the entire family unit.
+Household Habit Discovery: Heatmap analysis revealed a strong positive correlation between male and female consumption within the same household.
 
-Strategic Interventions: The "Triple-Lock" Framework
-To protect minors and reduce consumption, the project proposes three "locks":
+Insight: Suggests alcohol use is an environmental habit affecting the entire family unit rather than an individual choice.
 
+🛡️ Strategic Interventions: The "Triple-Lock" Framework
+Proposed automated and legislative "locks" to protect minors:
 
 Digital Lock: Aadhaar-linked biometric API for all alcohol transactions to automate age-gating.
-+1
 
-
-Educational Lock: Shifting from moral policing to a neuroscience-based curriculum focusing on prefrontal cortex development.
-
+Educational Lock: A neuroscience-based curriculum focusing on prefrontal cortex development (moving away from moral policing).
 
 Legal Lock: Establishing 300-meter "Sacred Zones" around schools where retail is prohibited.
 
-The Sobriety Dividend (Financial Modeling)
-The project models the redirection of a monthly alcohol spend (e.g., ₹4,000) into a prosperity fund yielding 12% annually.
+💰 The Sobriety Dividend (Financial Modeling)
+Modeling the redirection of a monthly alcohol spend (approx. ₹4,000) into a prosperity fund (12% annual yield):
 
+20-Year Projection: Results in a corpus of approximately ₹40 Lakhs.
 
-20-Year Projection: Results in a corpus of approximately ₹40 Lakhs, sufficient for higher education or clearing home loans.
+Utility: Sufficient for higher education or clearing home loans.
 
-Technical Implementation (SQL & Python)
-Data Normalization
+💻 Technical Implementation
+Data Normalization (SQL)
 SQL
 
--- Normalizing data for analytical consistency
+-- Ensuring data consistency by removing negative values
 UPDATE National_Health_Data 
 SET Consumption_Value = 0 
 WHERE Consumption_Value < 0;
-
-
-Wealth Projection Query
+Wealth Projection (SQL)
 SQL
 
 -- Calculating cumulative savings for the Family Wealth Plan
@@ -80,20 +73,16 @@ SELECT User_ID,
 FROM User_Savings_Log 
 WHERE Transaction_Date >= '2025-01-01' 
 GROUP BY User_ID;
+📊 Visualizations
+Figure 3: Urban vs. Rural Alcohol consumption comparative bar charts.
 
-
-Visualizations Included in Documentation
-
-Figure 3: Urban vs. Rural Alcohol consumption.
-
-
-Figure 5: Elbow method for optimal K identification.
-
+Figure 5: Elbow method graph for optimal K-Means cluster identification.
 
 Figure 6: Correlation heatmap of gender consumption patterns.
 
+Figure 12: Exponential growth curve showing wealth accumulation over 20 years.
 
-Figure 12: Exponential wealth growth over 20 years through redirected savings.
+✍️ Author
+Name: John Raj T
 
-Author
-John Raj T Date: 30/12/2025
+Date: 30/12/2025
