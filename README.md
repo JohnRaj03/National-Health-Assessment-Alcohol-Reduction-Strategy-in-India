@@ -53,7 +53,7 @@ Modeling the redirection of a monthly alcohol spend (approx. **₹4,000**) into 
 ## 💻 Technical Implementation
 
 ### Data Normalization (SQL)
-```sql
+
 -- Ensuring data consistency by removing negative values
 UPDATE National_Health_Data 
 SET Consumption_Value = 0 
@@ -64,7 +64,7 @@ WHERE Consumption_Value < 0;
 ## 💻 Technical Implementation
 
 ### Wealth Projection (SQL)
-```sql
+
 -- Calculating cumulative savings for the Family Wealth Plan
 SELECT User_ID, 
        SUM(Daily_Savings) AS Total_Principal, 
@@ -74,7 +74,19 @@ WHERE Transaction_Date >= '2025-01-01'
 GROUP BY User_ID;
 ---
 
+🖼️ Visualizations Included
+Figure 3: Urban vs. Rural Alcohol consumption comparative bar charts.
 
+Figure 5: Elbow method graph for optimal K-Means cluster identification.
+
+Figure 6: Correlation heatmap of gender consumption patterns.
+
+Figure 12: Exponential growth curve showing wealth accumulation over 20 years.
+
+✍️ Author
+Name: John Raj T
+
+Date: 30/12/2025
 
 
 
