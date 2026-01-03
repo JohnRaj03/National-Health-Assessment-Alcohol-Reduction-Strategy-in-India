@@ -72,7 +72,8 @@ SELECT User_ID,
 FROM User_Savings_Log 
 WHERE Transaction_Date >= '2025-01-01' 
 GROUP BY User_ID;
-sql
+---
+
 
 
 
